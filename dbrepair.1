@@ -1,0 +1,31 @@
+.\"
+.\" @(#) dbrepair.1 1.1  94/09/25 14:28:46
+.\"
+.TH DBREPAIR 1 "dbrepair 1.1"
+.SH NAME
+dbrepair \- repair "dirpath" column in "systables" table
+.SH SYNOPSIS
+dbrepair \-d dbname [\-t tabname] [filename]
+.SH DESCRIPTION
+.I Dbrepair
+will generate SQL "update systables set dirpath = %s where tabid = %d"
+statements for Informix database tables.
+.SH OPTIONS
+.TP
+.B \-d
+database name
+.TP
+.B \-t
+table name
+.TP
+filename is the name of the file that the SQL statements go in
+.SH NOTES
+.I Dbrepair
+requires that an Informix-SE engine be currently in use on the
+machine running it.
+.PP
+If a table name is not specified, the entire database is repaired.
+.PP
+Wild-card characters may be used in the table name if desired.
+.SH SUPPORT
+Send bug reports to Dave Snyder <dave@snide.com>
